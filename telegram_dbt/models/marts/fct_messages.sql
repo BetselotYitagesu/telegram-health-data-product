@@ -1,3 +1,4 @@
+-- sqlfmt: off
 select message_id,
        date,
        channel,
@@ -9,9 +10,5 @@ select message_id,
           else
              0
        end as has_image
-  from
-   {
-      {
-         ref('stg_telegram_messages')
-      }
-   }
+  -- sqlfmt: off
+  from {{ ref('stg_telegram_messages') }}

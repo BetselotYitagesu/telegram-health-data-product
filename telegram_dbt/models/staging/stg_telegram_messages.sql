@@ -10,9 +10,4 @@ select message_id,
        text,
        has_media,
        media_file_path
-  from
-   {
-      {
-         ref('raw_telegram_messages')
-      }
-   }
+from raw.telegram_messages

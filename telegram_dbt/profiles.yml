@@ -5,7 +5,7 @@ telegram_dbt:
       type: postgres
       host: localhost
       user: postgres
-      password: your_password
+      password: admin
       port: 5432
       dbname: telegram2
       schema: analytics # your final data mart layer

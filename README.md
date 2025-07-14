@@ -96,10 +96,24 @@ cd telegram_dbt
 dbt run
 
 
-📌 Next Steps
 
-    Task 3: Enrich data using YOLOv8 object detection on images
+### 📦 Task 3: Data Enrichment with YOLOv8
+- Installed `ultralytics` and used a pre-trained YOLOv8 model.
+- Detected medical product types in Telegram images (e.g., bottles, pills).
+- Results are stored in `raw.image_detections` table.
+- Created a DBT model `fct_image_detections` to integrate image analysis with message data.
 
-    Task 4: Build FastAPI endpoints to expose insights
+### 🌐 Task 4: Analytical API with FastAPI
+- Developed a FastAPI app to expose analytical endpoints:
+  - `/api/reports/top-products`: Top mentioned products
+  - `/api/channels/{channel_name}/activity`: Channel activity timeline
+  - `/api/search/messages?query=...`: Message search by keyword
+- Database connection handled with `psycopg2`, and Pydantic used for schema validation.
+- All code placed in `app/` folder with modular structure (`main.py`, `crud.py`, `schemas.py`, etc.)
 
-    Task 5: Orchestrate with Dagster
+### ⚙️ Task 5: Pipeline Orchestration with Dagster
+- Set up a Dagster project using `dagster project scaffold`.
+- Created reusable ops: `scrape_telegram_data`, `run_dbt_transformations`, `run_yolo_enrichment`.
+- Defined a Dagster `Job` to chain all tasks.
+- Launched the Dagster UI locally with `dagster dev`.
+

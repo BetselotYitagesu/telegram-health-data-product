@@ -9,3 +9,8 @@ fastapi
 uvicorn
 dagster
 dagster-webserver
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+python-dotenv
